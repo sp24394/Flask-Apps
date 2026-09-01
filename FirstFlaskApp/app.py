@@ -26,4 +26,8 @@ def error404(e):
 def date():
     return str(datetime.now())
 
+@app.route("/posts/<int:post_id>")
+def post(post_id):
+    return str(post_id)
+
 app.run(debug=True)
