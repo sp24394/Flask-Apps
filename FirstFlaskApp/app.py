@@ -30,4 +30,21 @@ def date():
 def post(post_id):
     return str(post_id)
 
+@app.route("/times/<int:number>") 
+def times_table(number): 
+    output = "<h1>The " + str(number) + " times table</h1>" 
+    for i in range(1, 13): 
+        answer = str(i * number) 
+        sum = str(i) + " x " + str(number) 
+        output += "<p>" + sum + " = " + answer + "</p>" 
+    return output
+
+@app.route("/add/<x>/<y>")
+def add(x, y):
+    return str(int(x) + int(y))
+
+@app.route("/dice/<int:sides>")
+def dice(sides):
+    return str(random.randint(1, sides))
+
 app.run(debug=True)
