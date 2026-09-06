@@ -1,4 +1,4 @@
-from flask import Flask; import random; from datetime import datetime; import time
+from flask import Flask, render_template, request; import random; from datetime import datetime; import time
 
 app = Flask(__name__)
 
@@ -20,7 +20,7 @@ def calc():
 
 @app.errorhandler(404)
 def error404(e):
-    return str(e) + "asdf"
+    return render_template("404.html", err=e.code, page_name=request.path)
 
 @app.route("/date")
 def date():
