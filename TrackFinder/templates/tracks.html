@@ -8,10 +8,14 @@
 <body>
     {% include 'nav.html' %}
     <h1>All Tracks</h1>
-    <ul>
+    <ol>
     {% for track in tracks %}
-        <li>{{track.name}} - {{track.length}}</li>
+        <li>{{track.name}} - {{track.length}} km
+        {% if track.grade == "Hard" %}
+            <strong>(difficult)</strong>
+        {% endif %}
+        </li>
     {% endfor %}
-    </ul>
+    </ol>
 </body>
 </html>
