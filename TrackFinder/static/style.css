@@ -1,0 +1,41 @@
+* {
+    --theme: #20d05a
+}
+
+body {
+    margin: 12px;
+    background-color: white;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    border: 1px solid #e4e4e4;
+    padding: 6px;
+}
+
+nav {
+    display: flex;
+    gap: 6px;
+}
+
+a, a:visited {
+    color: white;
+    text-decoration: none;
+    background-color: var(--theme);
+    padding: 5px 10px 8px 10px;
+    transition: all 0.12s ease;
+    display: block;
+}
+
+a:hover {
+    filter: brightness(1.15);
+}
+
+h1 {
+    border-left: 8px solid black;
+    padding-left: 10px;
+}

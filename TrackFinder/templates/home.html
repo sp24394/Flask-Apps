@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{site_name}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    {% include 'nav.html' %}
-    <h1>{{site_name}}</h1>
-    <p>Walking tracks around Auckland.</p>
-    <p>{{count}} tracks available,
-        {% if count > 3 %}plenty to choose from.
-        {% else %}only a few for now. 
-        {% endif %}</p>
+    <main>
+        {% include 'nav.html' %}
+        <h1>{{site_name}}</h1>
+        <p>Walking tracks around Auckland.</p>
+        <p>{{count}} tracks available,
+            {% if count > 3 %}plenty to choose from.
+            {% else %}only a few for now. 
+            {% endif %}</p>
+    </main>
 </body>
 </html>
