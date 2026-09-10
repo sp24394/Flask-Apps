@@ -7,18 +7,19 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    {% include 'nav.html' %}
     <main>
-        {% include 'nav.html' %}
         <h1>All Tracks</h1>
-        <ol>
-        {% for track in tracks %}
-            <li>{{track.name}} - {{track.length}} km
+        <div id="tracks-list">
+            {% for track in tracks %}
+            <div class="track-entry">
+                <h3>{{track.name}} - {{track.length}} km</h3>
             {% if track.grade == "Hard" %}
-                <strong>(difficult)</strong>
+                <strong style="color: rgb(255, 72, 72);">(difficult)</strong>
             {% endif %}
-            </li>
-        {% endfor %}
-        </ol>
+            </div>
+            {% endfor %}
+        </div>
     </main>
 </body>
 </html>

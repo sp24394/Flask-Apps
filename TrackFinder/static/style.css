@@ -1,41 +1,74 @@
-* {
-    --theme: #20d05a
-}
-
 body {
     margin: 12px;
     background-color: white;
     color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    gap: 0;
 }
 
 main {
-    max-width: 1000px;
+    max-width: calc(min(1000px, calc(100vw - 40px)) - 28px);
     margin: auto;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    border: 1px solid #e4e4e4;
-    padding: 6px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    outline: 2px solid rgba(0, 0, 0, 0.123);
+    padding: 20px;
+    border-radius: 6px;
+    background-color: white;
 }
 
 nav {
     display: flex;
     gap: 6px;
+    z-index: 5;
 }
 
-a, a:visited {
-    color: white;
+nav div {
+    width: min(1000px, calc(100vw - 40px));
+    display: flex;
+    gap: 4px;
+    margin: auto;
+}
+
+nav a, nav a:visited {
+    color: rgb(56, 56, 56);
     text-decoration: none;
-    background-color: var(--theme);
-    padding: 5px 10px 8px 10px;
-    transition: all 0.12s ease;
+    background-color: rgb(238, 238, 238);
+    padding: 5px 20px;
+    transition: all 0.25s ease;
     display: block;
+    border: 2px solid rgba(0, 0, 0, 0.123);
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    transform: translateY(0.5px);
 }
 
-a:hover {
-    filter: brightness(1.15);
+nav a:hover {
+    background-color: white;
+    color: black;
 }
 
 h1 {
     border-left: 8px solid black;
     padding-left: 10px;
+    margin-top: 0;
+}
+
+#tracks-list {
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.track-entry {
+    border: 2px solid rgba(0, 0, 0, 0.123);
+    padding: 14px;
+    border-radius: 6px;
+}
+
+.track-entry * {
+    margin: 0;
+}
+
+h3 {
+    font-weight: 500;
 }
