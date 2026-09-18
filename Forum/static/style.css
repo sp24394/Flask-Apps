@@ -1,4 +1,20 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 a {
     background-color: black;
     color: white;
+}
+
+.post {
+    background-color: #dfdfdf;
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

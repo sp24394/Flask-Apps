@@ -7,4 +7,23 @@
 
 <h2>Forum</h2>
 
+<section class="new-post">
+    <h2>Write a post</h2>
+    <form action="/post" method="POST">
+        Q28
+    </form>
+</section>
+
+<p>{{posts|length}} post{% if posts|length != 1 %}s{% endif %}</p>
+<div class="posts">
+{% for post in posts %}
+<article class="post">
+    <h3>{{post.author}}</h3>
+    <p>{{post.message}}</p>
+</article>
+{% else %}
+<p class="empty">No posts yet. Be the first!</p>
+{% endfor %}
+</div>
+
 {% endblock %}
