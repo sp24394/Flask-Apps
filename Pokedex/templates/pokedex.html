@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="pokedex">
+        {% for p in pokemon %}
+        <div id="{{p.Name}}" class="pokedex-entry {{p.Type1 | lower}}-type {{p.Type2 | lower}}-type">
+            <img src="/static/pokemon_images/{{p.Name}}.png" alt="{{p.Name | capitalize}}">
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
